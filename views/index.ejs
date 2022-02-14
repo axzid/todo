@@ -1,0 +1,17 @@
+<%- include('./partials/head')  %> 
+
+<h1 style="text-align: center;"> ToDo app menggunakan node js express dan mongo db </h1>
+<div class="container mt-5">
+    <form action="/add/todo" method="POST" class="d-flex">
+        <input type="text" name="todo" class="form-control" placeholder="add new taks">
+        <input type="submit" value="ADD" class="btn btn-md btn-primary px-3 mx-1">
+    </form>
+    <ul class="list-group my-5">
+        <% todo.forEach(todos => { %>
+      <li class="list-group-item d-flex justify-content-between"><%= todos.todo %>
+       <a href="/delete/todo/<%= todos._id %> " class="badge bg-danger text-decoration-none">delete</a></li>
+      <% }) %>
+  </ul>
+</div>
+
+<%- include('./partials/footer')  %> 
