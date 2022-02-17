@@ -3,9 +3,10 @@ const monggose = require('mongoose');
 
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
-monggose.connect('mongodb://localhost/todo', {
+monggose.connect(process.env.MONGODB_URI ||'mongodb://localhost/todo', {
      useNewUrlParser: true,
      useUnifiedTopology: true 
     })
@@ -23,4 +24,4 @@ app.use(require('./routes/todo'));
 
 
 //server node js 
-app.listen(3000, () => console.log(`server listening on port 3000`));
+app.listen(port, () => console.log(`server listening on port 3000`));
