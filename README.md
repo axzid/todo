@@ -1,4 +1,4 @@
-# todo
+# todo node js , mongoDB , express
 simple todo app NodeJS, express, mongoDB
 
 how to use?
